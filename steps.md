@@ -7,7 +7,7 @@ Legend:
 - [>] * In progress / next up
 - [ ] Not started
 
-Last updated: 2025-11-09 14:16
+Last updated: 2025-11-09 14:39
 
 ---
 
@@ -231,3 +231,37 @@ Acceptance:
 - 2025-11-09: Implemented public Login page at /login with shadcn/ui form and placeholder /api/login endpoint (returns 501 until auth is wired).
 
 - 2025-11-09: Fixed Next.js error by removing metadata export from client component at app/(public)/login/page.tsx; updated steps.md in place.
+
+
+---
+
+## 9) Marketing/Home Page Parity with alliancesatwar.com
+
+- [x] Replicate home page structure in-app (no redirect), using shadcn/ui primitives for all sections (header/nav, hero, features, gallery, news, community, footer). ✓
+- [x] Update global metadata title/description to match brand. ✓
+- [>] Replace placeholder images in /public with real screenshots/assets from the project or new captures. *
+- [ ] Wire Latest news to a data source (static MD, JSON, or CMS) instead of hardcoded placeholders.
+- [ ] Add mobile nav menu (burger + sheet) parity if required by design.
+- [ ] Validate accessibility: heading order, link names, contrast.
+
+Acceptance:
+- Home page at "/" closely mirrors https://alliancesatwar.com/ content and structure without external redirects.
+- All content is served from this repository.
+
+
+---
+
+## 10) About Page Parity with alliancesatwar.com/about
+
+- [x] Create /about route and replicate content structure using shadcn/ui primitives (intro, what is AaW, history, community/Discord, getting started, credits). ✓
+- [ ] Verify copy accuracy against reference; refine wording and add missing subsections if any (e.g., screenshots or staff list). 
+- [ ] Replace placeholder/general text with authoritative copy where available. 
+- [ ] Centralize shared header/footer into a public layout to avoid duplication across pages. 
+- [ ] Accessibility pass: heading order (h1/h2), alt text, focus order, link names.
+
+Acceptance:
+- About page at "/about" mirrors https://alliancesatwar.com/about/ structure and tone.
+- Content served from this repository; no redirects.
+
+## Running Progress Log (continued)
+- 2025-11-09: Added About page at /about modeled after the reference site using shadcn/ui; linked CTAs to Guide, Register, and Community; updated metadata.
