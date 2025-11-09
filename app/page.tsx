@@ -1,110 +1,84 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Orkfia — Home",
+  description: "Classic browser strategy game. Modernized UI, same spirit."
+};
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start w-full max-w-2xl">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen font-sans">
+      <main className="container mx-auto max-w-3xl p-6 sm:p-8">
+        <header className="mb-6">
+          <h1 className="text-3xl font-bold tracking-tight">Orkfia</h1>
+          <p className="text-muted-foreground mt-1">
+            A classic text-based strategy game. Build your tribe, forge alliances, and conquer.
+          </p>
+        </header>
 
-        <div className="w-full">
-          <Separator className="my-4" />
-          <div className="flex gap-4 items-center flex-col sm:flex-row">
-            <Button asChild className="gap-2">
-              <a
-                href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  className="dark:invert"
-                  src="/vercel.svg"
-                  alt="Vercel logomark"
-                  width={20}
-                  height={20}
-                />
-                Deploy now
-              </a>
+        <div className="rounded-lg border bg-card p-6">
+          <p className="leading-relaxed">
+            Welcome to Orkfia — a classic text-based strategy game. Build your tribe, forge alliances, and compete for
+            glory.
+          </p>
+
+          <Separator className="my-6" />
+
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button
+              asChild
+              size="lg"
+              className="px-6"
+            >
+              <a href="/login">Log in</a>
             </Button>
-            <Button asChild variant="outline">
-              <a
-                href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read our docs
-              </a>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="px-6"
+            >
+              <a href="/register">Create an account</a>
             </Button>
           </div>
+
+          <div className="mt-6 text-sm text-muted-foreground">
+            <p>
+              Returning player? Log in to view your current stats and advisors.
+            </p>
+          </div>
         </div>
+
+        <section className="mt-10 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-lg border p-4">
+            <h2 className="font-semibold mb-2">What’s changing</h2>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>Faster, more responsive interface</li>
+              <li>Improved security and authentication</li>
+              <li>Same mechanics and formulas you know</li>
+            </ul>
+          </div>
+          <div className="rounded-lg border p-4">
+            <h2 className="font-semibold mb-2">Learn more</h2>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li><a
+                className="underline underline-offset-4"
+                href="/about"
+              >About Orkfia</a></li>
+              <li><a
+                className="underline underline-offset-4"
+                href="/credits"
+              >Credits</a></li>
+              <li><a
+                className="underline underline-offset-4"
+                href="/history"
+              >Age history</a></li>
+            </ul>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }

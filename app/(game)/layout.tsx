@@ -17,7 +17,7 @@ export default function GameLayout({ children }: { children: React.ReactNode }) 
       <Separator />
       <main className="container mx-auto p-4">{children}</main>
       <Separator />
-      <footer className="p-4 text-xs text-muted-foreground">© Orkfia</footer>
+      <footer className="p-4 text-xs text-muted-foreground">&copy; Orkfia</footer>
     </div>
   );
 }

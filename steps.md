@@ -7,7 +7,7 @@ Legend:
 - [>] * In progress / next up
 - [ ] Not started
 
-Last updated: 2025-11-09 13:46
+Last updated: 2025-11-09 14:16
 
 ---
 
@@ -226,3 +226,8 @@ Acceptance:
 ## Running Progress Log
 
 - 2025-11-09: Created this steps.md, recorded plan, and marked initial planning tasks as completed.
+- 2025-11-09: Migrated legacy PHP home page to Next.js (app/page.tsx) using public layout styles and shadcn/ui components; added metadata.
+- 2025-11-09: Removed migration messaging from the homepage and updated steps.md in place (no append).
+- 2025-11-09: Implemented public Login page at /login with shadcn/ui form and placeholder /api/login endpoint (returns 501 until auth is wired).
+
+- 2025-11-09: Fixed Next.js error by removing metadata export from client component at app/(public)/login/page.tsx; updated steps.md in place.
