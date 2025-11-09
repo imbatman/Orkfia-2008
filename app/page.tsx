@@ -13,9 +13,7 @@ import {
   NavigationMenuList
 } from "@/components/ui/navigation-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Orkfia — Home",
@@ -35,18 +33,9 @@ export default function Home() {
   ];
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Top Header / Nav */}
       <header className="border-b">
         <div className="container mx-auto flex items-center justify-between gap-4 py-4">
           <div className="flex items-center gap-3">
-            <div className="size-9 rounded bg-muted/60 flex items-center justify-center">
-              <Image
-                src="/globe.svg"
-                alt="Orkfia"
-                width={20}
-                height={20}
-              />
-            </div>
             <div>
               <div className="text-lg font-semibold leading-none">Orkfia</div>
               <div className="text-xs text-muted-foreground">Classic Browser Strategy Game</div>
@@ -95,7 +84,9 @@ export default function Home() {
               <Badge
                 variant="secondary"
                 className="rounded"
-              >Free to play since 2001</Badge>
+              >
+                Free to play since 2001
+              </Badge>
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
                 Build your tribe. Forge alliances. Dominate the world.
               </h1>
