@@ -7,7 +7,7 @@ Legend:
 - [>] * In progress / next up
 - [ ] Not started
 
-Last updated: 2025-11-09 14:39
+Last updated: 2025-11-09 14:52
 
 ---
 
@@ -265,3 +265,10 @@ Acceptance:
 
 ## Running Progress Log (continued)
 - 2025-11-09: Added About page at /about modeled after the reference site using shadcn/ui; linked CTAs to Guide, Register, and Community; updated metadata.
+
+
+---
+
+## 9) UI: Public Home
+
+- [x] Add "In-game advisors and rankings at a glance" timeline preview to hero card on `/` using shadcn/ui ScrollArea + Separator. Shows time and event text (e.g., war declarations, world events). (2025-11-09 14:52)

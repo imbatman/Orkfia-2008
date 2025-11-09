@@ -12,6 +12,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList
 } from "@/components/ui/navigation-menu";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Separator } from "@/components/ui/separator";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -22,6 +24,15 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const events = [
+    { time: "10 hours ago", text: "Poker Hands has declared war on Nineteen again!" },
+    {
+      time: "2 days ago",
+      text: "The Sun has gone dark. Night and day have become an indiscernible eternity. Some have gone mad, others are strengthened!"
+    },
+    { time: "3 days ago", text: "Market prices have stabilized across the realm." },
+    { time: "1 week ago", text: "A mysterious wanderer shared secret building techniques with several tribes." }
+  ];
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Top Header / Nav */}
@@ -111,21 +122,24 @@ export default function Home() {
               </div>
               <div className="text-xs text-muted-foreground">No downloads. No pay-to-win.</div>
             </div>
-            <div className="relative aspect-[4/3] rounded-lg border bg-card p-4">
-              <div className="absolute inset-0 -z-10 rounded-lg bg-gradient-to-tr from-primary/10 to-transparent" />
-              <div className="grid h-full w-full place-items-center text-center text-sm text-muted-foreground">
-                <div>
-                  <Image
-                    src="/window.svg"
-                    alt="Game UI preview"
-                    width={72}
-                    height={72}
-                    className="mx-auto mb-3 opacity-80"
-                  />
-                  <p>In-game advisors and rankings at a glance</p>
-                </div>
-              </div>
-            </div>
+            <Card>
+              <CardHeader>Global News</CardHeader>
+              <CardContent>
+                <ScrollArea className="h-full">
+                  <ul className="space-y-3 pr-2">
+                    {events.map((e, i) => (
+                      <li
+                        key={i}
+                        className="grid grid-cols-[auto_1fr] items-start gap-3 text-sm"
+                      >
+                        <span className="shrink-0 tabular-nums text-xs text-muted-foreground">{e.time}</span>
+                        <span className="leading-snug">{e.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollArea>
+              </CardContent>
+            </Card>
           </div>
         </section>
 
